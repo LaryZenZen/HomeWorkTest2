@@ -16,18 +16,12 @@ a {
     color: #3F5D45;
 }
 
-.wrap {
+.container {
     width: 1024px;
     margin: 0 auto;
+    padding-right: 42px;
+    padding-left: 42px;
 }
-
-.container {
-    width: 940px;
-    margin: 0 auto;
-}
-
-
-/* 雖然下半部不用做，但是下半部是滿版1024，所以加上一個.container */
 
 
 /* 通用設定 */
@@ -60,6 +54,10 @@ a {
     position: relative;
 }
 
+.writing-mode-lr {
+    writing-mode: vertical-lr;
+}
+
 
 /* header開始 */
 
@@ -85,24 +83,9 @@ a {
     font-weight: bold;
 }
 
-
-/* 不會看設計稿的字體粗度有沒有設計，肉眼看"好像是"粗體 */
-
 .header-bar-cart {
     padding-left: 19px;
 }
-
-
-/* 這裡的購物車除了使用
-.header-bar-cart {
-    padding-left: 19px;
-}
-    或是
-.header-bar-cart{
-    margin-left: 79px !important;
-}
-有更好的方式嗎?
-*/
 
 
 /* banner開始 */
@@ -121,16 +104,9 @@ a {
 
 .menu-list {
     width: 300px;
-    width: 100%;
-    margin-right: 10px;
+    max-width: 100%;
     text-align: center;
 }
-
-
-/* 
-1.不清楚破版原因，寬度設定300px，實際看卻是315.594，不設定width:100%，.menu-content又會壓縮過來
-2.我知道margin-right: 10px;是錯的，要推20px，但是為了先繳出版型請助教批改，我先調小
- */
 
 .menu-list h3 {
     padding-top: 16px;
@@ -158,19 +134,26 @@ a {
     background: #EAF0ED;
 }
 
-.menu-content-me {
-    margin-right: 10px;
+.menu-content {
+    width: 640px;
+    max-width: 100%;
 }
 
-
-/* 這裡除了一個一個加，還有更好的方法嗎? */
+.menu-content-me {
+    margin-right: 20px;
+}
 
 .card {
     margin-bottom: 20px;
 }
 
-.card-content p {
-    border: 1px solid #EAF0ED;
+.card-content {
+    border-right: 1px solid #EAF0ED;
+    border-left: 1px solid #EAF0ED;
+}
+
+.card-border-center {
+    border-right: 1px solid #EAF0ED;
 }
 
 .card-title {
@@ -197,13 +180,8 @@ a {
     line-height: 1.25rem;
     color: #EAF0ED;
     background-color: #3F5D45;
+    letter-spacing: 5px;
 }
-
-
-/* .card-featured內的文字只能使用br斷行嗎? */
-
-
-/* .card-title .card-subtitle 沒辦法與父元素滿版同寬，是因為d-flex的關係嗎?怎麼解決呢 */
 
 .card-link {
     background-color: #EAF0ED;
@@ -235,12 +213,10 @@ a {
     background-color: #3F5D45;
 }
 
-
-/* 不知道該如何讓左右箭頭與數字在垂直置中的時候是睡平呈現的，如果用padding推，我為了讓a連結是display: block;這樣上下推的高度會不同，數字1左右推的數值也不同，但是用寫死寬高，垂直置中因為左右箭頭的大小不同，看起來就沒對齊，麻煩助教解答 */
-
 .menu-page-arrow {
     display: block;
     height: 100%;
+    line-height: 65px;
 }
 
 .menu-page-number {
